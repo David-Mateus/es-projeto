@@ -1,5 +1,5 @@
 # Findy
-# O projeto faz parte da avaliação principal das disciplinas IF977- ENGENHARIA DE SOFTWARE do Centro de Informática da UFPE.
+## O projeto faz parte da avaliação principal das disciplinas IF977- ENGENHARIA DE SOFTWARE do Centro de Informática da UFPE.
 # 📑 Sobre
 # 💻 Tecnologias
 # 📔 Big idea 
