@@ -24,8 +24,8 @@
 - Perguntar às pessoas sobre o que acha do tema
 - Pesquisas sobre segurança/ Pesquisas sobre segurança de entregar um produto achado
 # 👤 Professor
-- Professor: Vinicius Cardoso Garcia - vcg@cin.ufpe.br
+- Professor: [Vinicius Cardoso Garcia](https://viniciusgarcia.me/) - vcg@cin.ufpe.br
 # 👥 Autores
-- David Mateus (dmls@cin.ufpe.br) - GitHub
-- Emmanuel de Luca (elts@cin.ufpe.com) - Github
-- Lucas Nascimento (lgrn@cin.ufpe.br) - Github
+- David Mateus (dmls@cin.ufpe.br) - [Github](https://github.com/David-Mateus)
+- Emmanuel de Luca (elts@cin.ufpe.com) - [Github](https://github.com/EmmanuelDeLuca)
+- Lucas Nascimento (lgrn@cin.ufpe.br) - [Github](https://github.com/Lucasgrn)
