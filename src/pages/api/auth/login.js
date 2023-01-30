@@ -1,5 +1,6 @@
 import { User } from "../../../models/User"
 import jwt from "jsonwebtoken"
+import { compare } from "bcrypt"
 
 export default async function Login(req, res) {
   const { email, password } = req.body
@@ -19,7 +20,7 @@ export default async function Login(req, res) {
 
     })
     res.status(200).send({ user, token })
-    
+
   } catch (error) {
     console.log(error)
     res.status(500).send({ error: error })
