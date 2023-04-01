@@ -54,6 +54,9 @@
 - Testes alfa e beta
 - Implementação piloto
 - MVP
+
+## 🔗 Slide
+- https://www.canva.com/design/DAFeJ1M7z7A/ZAASeHVEL3B5oqccdJXi4w/view?utm_content=DAFeJ1M7z7A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 ## 👤 Professor
 - Professor: [Vinicius Cardoso Garcia](https://viniciusgarcia.me/) - vcg@cin.ufpe.br
 ## 👥 Autores
