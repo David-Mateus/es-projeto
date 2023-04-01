@@ -1,5 +1,5 @@
 # Findy
-## IF977- ENGENHARIA DE SOFTWARE do Centro de Informática da UFPE.
+## PROJETO IF977- ENGENHARIA DE SOFTWARE do Centro de Informática da UFPE.
 ## 📑 Sobre
 ## 💻 Tecnologias
 [![My Skills](https://skills.thijs.gg/icons?i=react,kotlin,nodejs,figma&theme=light)](https://skills.thijs.gg)
