@@ -25,6 +25,7 @@
 - Pesquisas voltadas para o tema
 - Perguntar às pessoas sobre o que acha do tema
 - Pesquisas sobre segurança/ Pesquisas sobre segurança de entregar um produto achado
+
 ## 👤 Professor
 - Professor: [Vinicius Cardoso Garcia](https://viniciusgarcia.me/) - vcg@cin.ufpe.br
 ## 👥 Autores
