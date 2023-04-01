@@ -2,7 +2,7 @@
 ## PROJETO IF977- ENGENHARIA DE SOFTWARE do Centro de Informática da UFPE.
 ## 📑 Sobre
 ## 💻 Tecnologias
-[![My Skills](https://skills.thijs.gg/icons?i=react,kotlin,nodejs,figma&theme=light)](https://skills.thijs.gg)
+[![My Skills](https://skills.thijs.gg/icons?i=js,html,css,nextjs,nodejs,mongodb,tailwind,postman,discord,figma&theme=light)](https://skills.thijs.gg)
 
 ## 📔 Big idea 
  - Objetos/items perdidos no Centro de Informática
