@@ -21,7 +21,7 @@ export default function SignUp() {
   const onSubmit = (data) => console.log(data);
   return (
     <>
-      <div className="h-screen w-screen justify-center bg-gray-200 flex items-center">
+      <div className="h-screen w-screen justify-center bg-gray-300 flex items-center">
         <div className="w-80">
           <div className="flex justify-center items-center -mt-14 mb-4">
             <Link href="/">

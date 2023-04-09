@@ -20,7 +20,7 @@ export default function SignIn() {
 
   return (
     <>
-      <div className="h-screen w-screen justify-center  flex items-center bg-gray-200">
+      <div className="h-screen w-screen justify-center  flex items-center bg-gray-300">
         <div className="w-80">
           <div className="flex justify-center items-center -mt-14 mb-4">
             <Link href="/">

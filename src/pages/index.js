@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../styles/Modifica.module.css"
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-300 to-blue-200">
+    <div className="min-h-screen  bg-gray-300 ">
       {/* NavBar */}
       <nav className="flex justify-between px-6 py-4 sm:px-8 sm:py-6">
         <div className="flex items-center pb-24">
@@ -34,12 +34,12 @@ export default function Home() {
               São Longuinho, São longuinho, se eu achar o que perdi prometo uma vela acender no seu caminho.
             </p>
             <div className="flex flex-col md:flex-row">
-              <Link href="/">
+              <Link href="./authi/signInPage">
                 <button className="inline-block mb-4 md:mb-0 md:mr-4 px-8 py-4 text-2xl font-medium text-black border rounded-lg bg-white border-teal-400 hover:bg-blue-500 ">
                   Entrar
                 </button>
               </Link>
-              <Link href="/">
+              <Link href="./authi/signupPage">
                 <button className="inline-block px-8 py-4 text-2xl font-medium text-black border rounded-lg bg-blue-500 border-teal-400 hover:bg-white hover:bg-white">
                   Criar Perfil
                 </button>

@@ -1,10 +1,13 @@
-function Page({ stars }) {
-  return <div>Next stars: {stars}</div>;
-}
-Page.getInitialProps = async (ctx) => {
-  const res = await fetch("https://api.github.com/repos/vercel/next.js");
-  const json = await res.json();
-  return { stars: json.stargazers_count };
-};
+export default function Form() {
+  return (
+    <form action="/api/form" method="post">
+      <label htmlFor="first">First Name</label>
+      <input type="text" id="first" name="first" required />
 
-export default Page;
+      <label htmlFor="last">Last Name</label>
+      <input type="text" id="last" name="last" required />
+
+      <button type="submit">Submit</button>
+    </form>
+  )
+}
