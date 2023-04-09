@@ -34,12 +34,12 @@ export default function Home() {
               São Longuinho, São longuinho, se eu achar o que perdi prometo uma vela acender no seu caminho.
             </p>
             <div className="flex flex-col md:flex-row">
-              <Link href="/loginPage">
+              <Link href="/">
                 <button className="inline-block mb-4 md:mb-0 md:mr-4 px-8 py-4 text-2xl font-medium text-black border rounded-lg bg-white border-teal-400 hover:bg-blue-500 ">
                   Entrar
                 </button>
               </Link>
-              <Link href="/singupPage">
+              <Link href="/">
                 <button className="inline-block px-8 py-4 text-2xl font-medium text-black border rounded-lg bg-blue-500 border-teal-400 hover:bg-white hover:bg-white">
                   Criar Perfil
                 </button>
