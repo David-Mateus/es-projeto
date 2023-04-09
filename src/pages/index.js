@@ -22,7 +22,7 @@ export default function Home() {
         <div className="flex flex-col items-center md:items-start md:flex-row md:space-x-16 xl:space-x-32">
           {/* Image */}
           <div className="mt-12 md:-mt-24">
-              <Image className={styles.ajuste} src="/Ilustracao.png" width={500} height={500} alt="ilustração" />
+              <Image className={styles.ajuste} src="/Ilustracao2.png" width={500} height={500} alt="ilustração" />
           </div>
 
           {/* Text and checkout login */}
@@ -34,12 +34,12 @@ export default function Home() {
               São Longuinho, São longuinho, se eu achar o que perdi prometo uma vela acender no seu caminho.
             </p>
             <div className="flex flex-col md:flex-row">
-              <Link href="/signIn">
+              <Link href="/loginPage">
                 <button className="inline-block mb-4 md:mb-0 md:mr-4 px-8 py-4 text-2xl font-medium text-black border rounded-lg bg-white border-teal-400 hover:bg-blue-500 ">
                   Entrar
                 </button>
               </Link>
-              <Link href="/signUp">
+              <Link href="/singupPage">
                 <button className="inline-block px-8 py-4 text-2xl font-medium text-black border rounded-lg bg-blue-500 border-teal-400 hover:bg-white hover:bg-white">
                   Criar Perfil
                 </button>
