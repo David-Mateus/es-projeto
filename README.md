@@ -1,6 +1,6 @@
 # 🔎 Locate.Me
 ## PROJETO IF977- ENGENHARIA DE SOFTWARE do Centro de Informática da UFPE.
-## 📑 Sobre
+## 📑 Sobr
 ## 💻 Tecnologias
 [![My Skills](https://skills.thijs.gg/icons?i=js,html,css,nextjs,nodejs,mongodb,tailwind,postman,discord,figma&theme=light)](https://skills.thijs.gg)
 
