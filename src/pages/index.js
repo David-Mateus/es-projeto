@@ -40,7 +40,7 @@ export default function Home() {
                 </button>
               </Link>
               <Link href="./authi/signupPage">
-                <button className="inline-block px-8 py-4 text-2xl font-medium text-black border rounded-lg bg-blue-500 border-teal-400 hover:bg-white hover:bg-white">
+                <button className= "inline-block px-8 py-4 text-2xl font-medium text-black border rounded-lg bg-blue-500 border-teal-400 hover:bg-white hover:bg-white">
                   Criar Perfil
                 </button>
               </Link>
