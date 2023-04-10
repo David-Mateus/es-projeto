@@ -19,10 +19,10 @@ const UserSchema = new db.Schema({
     require: true,
     select: false
   },
-  posts: {
+  posts: [{
     type: ObjectId,
     ref: 'Post'
-  },
+  }],
   createdAt: {
     type: Date,
     default: Date.now
