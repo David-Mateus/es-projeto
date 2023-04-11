@@ -5,8 +5,11 @@ export default function Feed() {
     <>  
         <div className="bg-gray-200">
             {/* Inicio- Topo */}
-            <div className="flex justify-center itens-center bg-blue-500 h-48">
-                <h1 className="mt-16 mr-96 text-white text-2xl font-serif">Lista de Itens <br/>Perdidos</h1>
+            <div className="bg-blue-500 h-54">
+                <Link href="/" className="flex justify-start pl-8 pt-4">
+                    <Image src="/imgTest/david1.png" alt="Imagem do usuário" width={66} height={66}/>
+                </Link>
+                <h1 className="mt-16 mr-96 pb-8 flex justify-center itens-center text-white text-2xl font-serif">Lista de Itens</h1>
             </div>
             {/* Fim - Topo */}
 
