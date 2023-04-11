@@ -6,10 +6,10 @@ export default function Feed() {
         <div className="bg-gray-200">
             {/* Inicio- Topo */}
             <div className="bg-blue-500 h-54">
-                <Link href="/" className="flex justify-start pl-8 pt-4">
+                <Link href="/" className="flex pl-10 pt-6 sm:pl-24">
                     <Image src="/imgTest/david1.png" alt="Imagem do usuário" width={66} height={66}/>
                 </Link>
-                <h1 className="mt-16 mr-96 pb-8 flex justify-center itens-center text-white text-2xl font-serif">Lista de Itens</h1>
+                <h1 className="mt-12 mr-90 pb-8 flex justify-center itens-center text-white text-2xl font-serif sm:mr-96">Lista de Itens</h1>
             </div>
             {/* Fim - Topo */}
 
@@ -25,13 +25,14 @@ export default function Feed() {
                     {/* Conteudo */}
                     <div class="p-4 border-b-2 border-gray-200">
                         <p class="text-gray-700">Descrição do usuário Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec massa vel quam dictum tempor.</p>
-                        {/* <Image class="mt-4" src="/" alt="Imagem do meio do card"/> */}
+                        <Image class="mt-4" src="/imgTest/img-1.png" alt="Imagem do meio do card" width={100} height={100}/>
                     </div>
         
                     {/* Rodapé do card */}
-                    <div class="flex items-center justify-between bg-white  h-16 px-4">
-                        <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mr-2">Email</button>
-                        <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">WhatsApp</button>
+                    <div class="flex items-center justify-end bg-gray-100 space-x-4 h-16 px-4 pr-6">
+                        <Link href="/"><Image src="/imgTest/whatsapp.png" alt="Icone do Whatsapp" width={30} height={30}/></Link>
+
+                        <Link href="/"><Image src="/imgTest/gmail.png" alt="Icone do Gmail" width={30} height={30}/></Link>
                     </div>
                 </div>
             </div>

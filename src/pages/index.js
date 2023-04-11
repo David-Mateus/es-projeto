@@ -28,7 +28,7 @@ export default function Home() {
           <div className="flex space-x-28">
             {/* Image */}
             <div className="flex-shrink -mt-16">
-              <Image
+              <Image className={styles.ajuste}
                 src="/Ilustracao.png"
                 width={500}
                 height={500}
