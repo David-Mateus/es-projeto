@@ -1,6 +1,6 @@
 import { db } from "../database/mongo";
 import { hash } from "bcrypt";
-
+const ObjectId = db.Schema.ObjectId
 const UserSchema = new db.Schema({
   name: {
     type: String,
@@ -9,13 +9,25 @@ const UserSchema = new db.Schema({
   email: {
     type: String,
     require: true
-  }, 
+  },
+  phone: {
+    type: String,
+    require: true
+  },
   password: {
     type: String,
     require: true,
     select: false
   },
-  
+  posts: [{
+    type: ObjectId,
+    ref: 'Post'
+  }],
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
+
 })
 
 UserSchema.pre('save', async function (next) {
