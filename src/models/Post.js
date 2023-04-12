@@ -7,7 +7,7 @@ const PostSchema = new db.Schema({
   },
   image: {
     type: String,
-    require: true
+    require: false
   },
   description: {
     type: String,

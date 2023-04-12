@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Card from "../../Components/Card";
+import { parseCookies } from "nookies";
 
 export default function Profile(){
   
@@ -135,3 +136,19 @@ export default function Profile(){
   );
 };
 
+export const getServerSideProps = async (ctx) => {
+  const { 'findy-token': token } = parseCookies(ctx);
+
+  if (!token) {
+    return {
+      redirect: {
+        destination: "/authi/signInPage",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};

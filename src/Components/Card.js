@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function Card(props) {
   return (
     <>
@@ -11,7 +12,7 @@ export default function Card(props) {
           />
           <div className="ml-3">
             <span className="text-sm font-semibold antialiased block leading-tight">
-              Nome-profile
+              {props.name}
             </span>
             <span className="text-xs text-gray-600 block leading-tight">
               {props.time}
@@ -31,9 +32,11 @@ export default function Card(props) {
           <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mr-2">
             Email
           </button>
-          <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-4 rounded">
-            WhatsApp
-          </button>
+          <Link href={`https://wa.me/55${props.phone}`}>
+            <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-4 rounded" >
+              WhatsApp
+            </button>
+          </Link>
         </div>
       </div>
     </>

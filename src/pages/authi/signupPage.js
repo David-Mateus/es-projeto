@@ -3,10 +3,11 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
+import { api } from "../../services/api";
+import Router from "next/router";
 const schema = yup.object({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
+  name: yup.string().required(),
+  phone: yup.string().required(),
   email: yup.string().email().required(),
   password: yup.string().required(),
 });
@@ -18,7 +19,16 @@ export default function SignUp() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => console.log(data);
+
+  
+  async function onSubmit(data) {
+    try {
+      await api.post('/auth/register', data)
+      Router.push('/authi/signInPage')
+    } catch (error) {
+      console.error(error);
+    }
+  }
   return (
     <>
       <div className="h-screen w-screen justify-center bg-gray-300 flex items-center">
@@ -44,18 +54,18 @@ export default function SignUp() {
                   htmlFor="first_name"
                   className="block text-sm  text-gray-700 mb-1"
                 >
-                  First name
+                  Name
                 </label>
                 <input
                   type="text"
-                  id="first_name"
-                  name="first_name"
-                  {...register("firstName")}
+                  id="name"
+                  name="name"
+                  {...register("name")}
                   className="w-full mt-1 bg-gray-50 border border-gray-300 rounded px-2 py-1 text-sm text-gray-800 
                 placeholder-gray-300 focus:outline-none focus:shadow-outline-blue focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-500 ease-in-out "
                 />
                 <p className="italic  text-xs text-red-400">
-                  {errors.firstName?.message}
+                  {errors.name?.message}
                 </p>
               </div>
               <div>
@@ -63,18 +73,18 @@ export default function SignUp() {
                   htmlFor="last_name"
                   className="block text-sm  text-gray-700 mb-1"
                 >
-                  Last name
+                  Phone
                 </label>
                 <input
                   type="text"
-                  id="last_name"
-                  name="last_name"
-                  {...register("lastName")}
+                  id="phone"
+                  name="phone"
+                  {...register("phone")}
                   className="w-full mt-1 bg-gray-50 border border-gray-300 rounded px-2 py-1 text-sm text-gray-800 
                 placeholder-gray-300 focus:outline-none focus:shadow-outline-blue focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-500 ease-in-out "
                 />
                 <p className="italic  text-xs text-red-400">
-                  {errors.lastName?.message}
+                  {errors.phone?.message}
                 </p>
               </div>
 
@@ -90,7 +100,7 @@ export default function SignUp() {
                   className="w-full mt-1 bg-gray-50 border border-gray-300 rounded px-2 py-1 text-sm text-gray-800 
                 placeholder-gray-300 focus:outline-none focus:shadow-outline-blue focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-500 ease-in-out "
                 />
-                <p className="italic  text-xs text-red-400">
+                <p className="italilastNamec  text-xs text-red-400">
                   {errors.email?.message}
                 </p>
               </div>

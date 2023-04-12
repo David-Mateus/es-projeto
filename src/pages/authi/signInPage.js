@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { AuthContext } from "../../contexts/authContext";
+import { useContext } from "react";
+import { parseCookies } from "nookies";
 
 const schema = yup.object({
   email: yup.string().email().required(),
@@ -16,7 +19,17 @@ export default function SignIn() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => console.log(data);
+
+  const { isAuthenticated, signIn } = useContext(AuthContext)
+
+
+  async function onSubmit(data) {
+    try {
+      await signIn(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <>
@@ -95,7 +108,6 @@ export default function SignIn() {
                   Email address
                 </label>
                 <input
-                  defaultValue="email"
                   {...register("email")}
                   type="text"
                   id="email"
@@ -104,7 +116,6 @@ export default function SignIn() {
                 placeholder-gray-300 focus:outline-none focus:shadow-outline-blue focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-500 ease-in-out "
                 />
                 <p className="italic  text-xs text-red-400">{errors.email?.message}</p>
-                
               </div>
               <div>
                 <label
@@ -114,7 +125,6 @@ export default function SignIn() {
                   Password
                 </label>
                 <input
-                  defaultValue="password"
                   {...register("password")}
                   type="password"
                   id="password"
@@ -143,3 +153,19 @@ export default function SignIn() {
     </>
   );
 }
+export const getServerSideProps = async (ctx) => {
+  const { "findy-token": token } = parseCookies(ctx);
+
+  if (token) {
+    return {
+      redirect: {
+        destination: "/feed",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
