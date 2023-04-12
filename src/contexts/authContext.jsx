@@ -19,7 +19,8 @@ export function AuthProvider({ children }) {
   async function signIn({ email, password }) {
     const response = await api.post('/auth/login', { email, password })
     setCookie(undefined, 'findy-token', response.data.token, {
-      maxAge: 60 * 60
+      maxAge: 60 * 60,
+      path: '/'
     })
     api.defaults.headers['Authorization'] = `Bearer ${response.data.token}`
     setUser(response.data.user)
