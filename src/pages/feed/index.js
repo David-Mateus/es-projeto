@@ -7,14 +7,14 @@ import Card from "../../Components/Card";
 export default function Feed({ posts }) {
     return (
         <>
-            <div className="bg-gray-200">
+            <div className="bg-gray-200 h-full">
                 {/* Inicio- Topo */}
                 <div className="flex justify-center itens-center bg-blue-500 h-48">
                     <h1 className="mt-16 mr-96 text-white text-2xl font-serif">Lista de Itens <br />Perdidos</h1>
                 </div>
                 {/* Fim - Topo */}
 
-                <div class="flex flex-col items-center justify-center h-screen">
+                <div class="flex flex-col items-center justify-center">
 
                     {posts.map((post) => {
                         return (
