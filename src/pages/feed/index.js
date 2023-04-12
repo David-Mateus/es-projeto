@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/Modifica.module.css"
+import { parseCookies } from "nookies";
 export default function Feed() {
   return (
     <>  
@@ -39,3 +40,19 @@ export default function Feed() {
     
   );
 }
+export const getServerSideProps = async (ctx) => {
+    const { 'findy-token': token } = parseCookies(ctx);
+  
+    if (!token) {
+      return {
+        redirect: {
+          destination: "/authi/signInPage",
+          permanent: false,
+        },
+      };
+    }
+  
+    return {
+      props: {},
+    };
+  };

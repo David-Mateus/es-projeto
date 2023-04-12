@@ -154,7 +154,7 @@ export default function SignIn() {
   );
 }
 export const getServerSideProps = async (ctx) => {
-  const { ["findy-token"]: token } = parseCookies(ctx);
+  const { "findy-token": token } = parseCookies(ctx);
 
   if (token) {
     return {
