@@ -6,7 +6,7 @@ import * as yup from "yup";
 import { AuthContext } from "../../contexts/authContext";
 import { useContext } from "react";
 import { parseCookies } from "nookies";
-
+import Head from "next/head";
 const schema = yup.object({
   email: yup.string().email().required(),
   password: yup.string().required(),
@@ -32,7 +32,16 @@ export default function SignIn() {
   }
 
   return (
+    
     <>
+    <Head>
+        <title>Entrar | LocateMe</title>
+        <meta
+          name="description"
+          content="você"
+        />
+        <link rel="icon" href="/logoLupa.png" />
+      </Head>
       <div className="h-screen w-screen justify-center  flex items-center bg-gray-300">
         <div className="w-80">
           <div className="flex justify-center items-center -mt-14 mb-4">

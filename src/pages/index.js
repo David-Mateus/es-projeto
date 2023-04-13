@@ -1,11 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Modifica.module.css"
-
+import Head from "next/head";
 export default function Home() {
   return (
-   
- 
+   <>
+    <Head>
+        <title>Home | LocateMe</title>
+        <meta
+          name="description"
+          content="você"
+        />
+        <link rel="icon" href="/logoLupa.png" />
+      </Head>
     <div className="h-screen bg-gray-300">
         {/* NavBar - Componente - 1 */}
         <div className="  flex justify-between">
@@ -62,5 +68,7 @@ export default function Home() {
         </div>
         {/* /Section */}
       </div>
+   </>
+ 
   );
 }

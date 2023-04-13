@@ -35,6 +35,14 @@ export default function Profile() {
 
   return (
     <>
+     <Head>
+        <title>Perfil | LocateMe</title>
+        <meta
+          name="description"
+          content="você"
+        />
+        <link rel="icon" href="/logoLupa.png" />
+      </Head>
       {/* NavBar - Componente - 1 */}
     
       <div className=" full-h-screen bg-slate-500 ">
