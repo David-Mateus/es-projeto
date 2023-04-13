@@ -38,7 +38,7 @@ export default function SignIn() {
           <div className="flex justify-center items-center -mt-14 mb-4">
             <Link href="/">
               <Image
-                src="/ilustracao.png"
+                src="/Ilustracao.png"
                 alt="Picture of the author"
                 width={70}
                 height={70}
