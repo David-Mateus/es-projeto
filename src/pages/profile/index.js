@@ -5,6 +5,7 @@ import { useState } from "react";
 import Card from "../../Components/Card";
 import { parseCookies } from "nookies";
 import GridCards from "../../Components/GridCards";
+import Head from "next/head";
 
 export default function Profile() {
   const [posts, setPosts] = useState();
