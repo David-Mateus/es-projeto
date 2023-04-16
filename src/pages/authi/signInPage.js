@@ -7,6 +7,7 @@ import { AuthContext } from "../../contexts/authContext";
 import { useContext } from "react";
 import { parseCookies } from "nookies";
 import Head from "next/head";
+
 const schema = yup.object({
   email: yup.string().email().required(),
   password: yup.string().required(),

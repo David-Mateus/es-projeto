@@ -8,6 +8,11 @@ import GridCards from "../../Components/GridCards";
 import Head from "next/head";
 
 export default function Profile() {
+  
+    
+  const [isCardVisible, setIsCardVisible] = useState(true);
+  
+
   const [posts, setPosts] = useState();
   const [text, setName] = useState([]);
   const [imagemUrl, setImagemUrl] = useState("");
@@ -21,7 +26,10 @@ export default function Profile() {
     };
     reader.readAsDataURL(file);
   }
+
+  
   const addPost = (e) => {
+    setIsCardVisible(false);
     e.preventDefault();
     const newPost = {
       text: posts,
@@ -32,6 +40,9 @@ export default function Profile() {
       imagemUrl: imagemUrl,
     };
     setName((prevState) => [...prevState, newPost]);
+    
+      
+   
   };
 
   return (
@@ -46,7 +57,7 @@ export default function Profile() {
       </Head>
       {/* NavBar - Componente - 1 */}
     
-      <div className=" full-h-screen bg-slate-500 ">
+      <div className=" full-h-screen bg-slate-300 ">
         
 
         <div className="flex flex-row justify-evenly">
@@ -86,14 +97,12 @@ export default function Profile() {
         <form className="grid justify-items-center mt-10 ">
           <div className="w-3/6   mb-1 border border-blue-100 rounded-md bg-blue-100">
             <div className="px-1 py-1 bg-white rounded-md dark:bg-blue-100 ">
-              <label htmlFor="comment" className="sr-only">
-                Your comment
-              </label>
+             
               <textarea
                 id="comment"
                 rows="4"
                 className="w-full px-1 py-1 text-sm text-gray-800 resize-none"
-                placeholder="Write a comment..."
+                placeholder="Digite seu comentário..."
                 onChange={(e) => {
                   setPosts(e.target.value);
                 }}
@@ -110,7 +119,7 @@ export default function Profile() {
               </div>
               <button
                 onClick={addPost}
-                className="inline-flex items-center py-1 px-1 text-xs font-medium text-center text-white bg-blue-600 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-400 hover:bg-blue-400"
+                className="inline-flex items-center py-1 px-1 text-xs font-medium text-center text-white bg-blue-500 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-400 hover:bg-blue-600"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -129,12 +138,13 @@ export default function Profile() {
               </button>
             </div>
           </div>
-          <GridCards/>
+          {isCardVisible && (<GridCards/>)}
+          
         </form>
         
       </div>
 
-      <div className="full-h-screen bg-slate-500 ">
+      <div className="full-h-screen bg-slate-300 ">
         <div className=" grid justify-items-center">
           {text.map((item, index) => (
             <Card
