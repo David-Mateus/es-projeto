@@ -162,19 +162,19 @@ export default function Profile() {
   );
 }
 
-// export const getServerSideProps = async (ctx) => {
-//   const { 'findy-token': token } = parseCookies(ctx);
+export const getServerSideProps = async (ctx) => {
+  const { 'findy-token': token } = parseCookies(ctx);
 
-//   if (!token) {
-//     return {
-//       redirect: {
-//         destination: "/authi/signInPage",
-//         permanent: false,
-//       },
-//     };
-//   }
+  if (!token) {
+    return {
+      redirect: {
+        destination: "/authi/signInPage",
+        permanent: false,
+      },
+    };
+  }
 
-//   return {
-//     props: {},
-//   };
-// };
+  return {
+    props: {},
+  };
+};
