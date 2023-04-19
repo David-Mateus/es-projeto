@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Card(props) {
   return (
     <>
-      <div className="w-96 h-74  py-2 bg-gray-100 border rounded-md max-w-md mt-2 ">
+      <div className="w-96 h-72  py-2 bg-white border border-gray-300 rounded-md max-w-md mt-10 mb-6 ">
         {/* create image */}
         <div className="flex  items-center px-4 py-3">
           <img
@@ -28,14 +28,13 @@ export default function Card(props) {
           <Image width="130" height="130" src={props.imagemUrl} />
         </div>
 
-        <div className="flex items-center  justify-evenly   ">
-          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-4 rounded mr-2">
-            Email
-          </button>
+        <div className="flex items-center  justify-center px-10  py-4 bg-gray-100 rounded-b-lg  border border-gray-300 ">
+        <Link href={''} className="px-6 ">
+            <Image src="/gmail.png" width={25} height={25}/>     
+          </Link>
+         
           <Link href={`https://wa.me/55${props.phone}`}>
-            <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-4 rounded" >
-              WhatsApp
-            </button>
+            <Image src="/whatsapp.png" width={25} height={25}/>     
           </Link>
         </div>
       </div>
