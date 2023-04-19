@@ -4,7 +4,7 @@ const apiBaseUrl = process.env.BASE_URL
 const { 'findy-token': token } = parseCookies()
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000/api'
+  baseURL: 'https://locate-me-wine.vercel.app/api'
 })
 
 if (token) {
