@@ -1,11 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Modifica.module.css"
-
+import Head from "next/head";
 export default function Home() {
   return (
-   
- 
+   <>
+    <Head>
+        <title>Home | LocateMe</title>
+        <meta
+          name="description"
+          content="você"
+        />
+        <link rel="icon" href="/logoLupa.png" />
+      </Head>
     <div className="h-screen bg-gray-300">
         {/* NavBar - Componente - 1 */}
         <div className="  flex justify-between">
@@ -24,10 +30,10 @@ export default function Home() {
         {/* /NavBar */}
 
         {/* Section */}
-        <div className="container  md-auto ">
-          <div className="flex space-x-28">
+        <div className="container  md-auto  ">
+          <div className="flex space-x-36">
             {/* Image */}
-            <div className="flex-shrink -mt-16">
+            <div className="flex-shrink -mt-16 ml-20 ease-linear transform hover:scale-125 transition duration-700">
               <Image
                 src="/Ilustracao.png"
                 width={500}
@@ -52,7 +58,7 @@ export default function Home() {
                 </button>
               </Link>
               <Link href="./authi/signupPage">
-                <button className="inline-block px-6 py-3 text-xl font-bold text-gray-700 border rounded-lg bg-blue-400 border-teal-600 hover:bg-gray-300 hover:bg-white">
+                <button className="inline-block px-6 py-3 text-xl font-bold text-gray-700 border rounded-lg bg-blue-400 border-teal-600 hover:bg-gray-300 ">
                   Criar perfil
                 </button>
               </Link>
@@ -62,5 +68,7 @@ export default function Home() {
         </div>
         {/* /Section */}
       </div>
+   </>
+ 
   );
 }

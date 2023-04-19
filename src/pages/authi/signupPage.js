@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { api } from "../../services/api";
 import Router from "next/router";
+import Head from "next/head";
+
 const schema = yup.object({
   name: yup.string().required(),
   phone: yup.string().required(),
@@ -20,23 +22,32 @@ export default function SignUp() {
     resolver: yupResolver(schema),
   });
 
-  
   async function onSubmit(data) {
     try {
-      await api.post('/auth/register', data)
-      Router.push('/authi/signInPage')
+      await api.post("/auth/register", data);
+      Router.push("/authi/signInPage");
     } catch (error) {
       console.error(error);
     }
   }
   return (
     <>
+     <Head>
+        <title>Registre-se | LocateMe</title>
+        <meta
+          name="description"
+          content="você"
+        />
+        <link rel="icon" href="/logoLupa.png" />
+      </Head>
+
       <div className="h-screen w-screen justify-center bg-gray-300 flex items-center">
+      
         <div className="w-80">
           <div className="flex justify-center items-center -mt-14 mb-4">
             <Link href="/">
               <Image
-                src="/ilustracao.png"
+                src="/Ilustracao.png"
                 alt="Picture of the author"
                 width={70}
                 height={70}
@@ -89,7 +100,10 @@ export default function SignUp() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm  text-gray-700 mb-1">
+                <label
+                  htmlFor="email"
+                  className="block text-sm  text-gray-700 mb-1"
+                >
                   Email address
                 </label>
                 <input

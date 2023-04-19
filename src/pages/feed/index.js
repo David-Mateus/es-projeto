@@ -7,10 +7,23 @@ import Card from "../../Components/Card";
 export default function Feed({ posts }) {
     return (
         <>
-            <div className="bg-gray-200 h-full">
+            <div className="bg-gray-200 h-min-full">
                 {/* Inicio- Topo */}
-                <div className="flex justify-center itens-center bg-blue-500 h-48">
-                    <h1 className="mt-16 mr-96 text-white text-2xl font-serif">Lista de Itens <br />Perdidos</h1>
+                <div className=" bg-blue-500 h-50">
+                    <div className="flex justify-between">
+                        <div className="flex ml-8 mt-2 sm:ml-20">
+                            <Image className="" src="/icons.png" width={50} height={50} alt="Logo" />
+                            <h1 className="text-5xl text-gray-700 font-bold">LocateMe</h1>
+                        </div>
+
+                        <Link href="/profile">
+                            <Image className="mr-16 mt-4 sm:mr-20" src="/imgTest/david1.png" alt="Imagem do usuário" width={40} height={40}/>
+                        </Link> 
+                        
+                    </div>
+                    <div className="flex justify-center itens-center">
+                        <h1 className="min-w-0 mb-2 mt-16 mr-100 text-white text-4xl font-sans border-y-2">Lista de Itens</h1>
+                    </div>
                 </div>
                 {/* Fim - Topo */}
 
