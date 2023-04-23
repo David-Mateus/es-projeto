@@ -1,7 +1,9 @@
 # 🔎 Locate.Me
 ## PROJETO IF977- ENGENHARIA DE SOFTWARE do Centro de Informática da UFPE.
-## 📑 Sobr
-## 💻 Tecnologias
+## 📑 Sobre
+<p align="justify"> O Locate.Me é uma plataforma voltada para organização de achados e perdidos no Centro de Informática da Universidade Federal de Pernambuco, com o objetivo de facilitar a comunicação entre quem perdeu e quem encontrou objetos perdidos, tornando a busca por esses objetos mais eficiente. A plataforma irá reunir informações sobre os objetos perdidos, tais como local e data onde foram encontrados, descrição do objeto e informações de contato dos proprietários. O Locate.Me tem como objetivo trazer mais eficiência e praticidade na busca e devolução de objetos perdidos.
+
+## 💻 Tecnologias Utilizadas
 [![My Skills](https://skills.thijs.gg/icons?i=js,html,css,nextjs,nodejs,mongodb,tailwind,postman,discord,figma&theme=light)](https://skills.thijs.gg)
 
 ## 📔 Big idea 
@@ -59,7 +61,9 @@
 - https://www.canva.com/design/DAFeJ1M7z7A/ZAASeHVEL3B5oqccdJXi4w/view?utm_content=DAFeJ1M7z7A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 ## 👤 Professor
 - Professor: [Vinicius Cardoso Garcia](https://viniciusgarcia.me/) - vcg@cin.ufpe.br
-## 👥 Autores
-- David Mateus (dmls@cin.ufpe.br) - [Github](https://github.com/David-Mateus)
-- Emmanuel de Luca (elts@cin.ufpe.com) - [Github](https://github.com/EmmanuelDeLuca)
-- Lucas Nascimento (lgrn@cin.ufpe.br) - [Github](https://github.com/Lucasgrn)
+## 👥 Equipe de Gerenciamento e Desenvolvimento
+| Membros | E-mail | Github |
+| :-----: | :----: | :----: |
+| David Mateus Leite da Silva | dmls@cin.ufpe.br | [David-Mateus](https://github.com/David-Mateus) |
+| Emmanuel De Luca Teixeira Da Silva | elts@cin.ufpe.br | [EmmanuelDeLuca](https://github.com/EmmanuelDeLuca) |
+| Lucas Gabriel Da Rocha Nascimento | lgrn@cin.ufpe.br | [Lucasgrn](https://github.com/Lucasgrn) |
