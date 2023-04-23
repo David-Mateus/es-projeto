@@ -2,6 +2,7 @@
 ## PROJETO IF977- ENGENHARIA DE SOFTWARE do Centro de Informática da UFPE.
 ## 📑 Sobre
 <p align="justify"> O Locate.Me é uma plataforma voltada para organização de achados e perdidos no Centro de Informática da Universidade Federal de Pernambuco, com o objetivo de facilitar a comunicação entre quem perdeu e quem encontrou objetos perdidos, tornando a busca por esses objetos mais eficiente. A plataforma irá reunir informações sobre os objetos perdidos, tais como local e data onde foram encontrados, descrição do objeto e informações de contato dos proprietários. O Locate.Me tem como objetivo trazer mais eficiência e praticidade na busca e devolução de objetos perdidos.
+
 ## 💻 Tecnologias Utilizadas
 [![My Skills](https://skills.thijs.gg/icons?i=js,html,css,nextjs,nodejs,mongodb,tailwind,postman,discord,figma&theme=light)](https://skills.thijs.gg)
 
