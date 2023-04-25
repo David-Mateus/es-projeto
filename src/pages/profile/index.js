@@ -6,12 +6,13 @@ import Card from "../../Components/Card";
 import { parseCookies } from "nookies";
 import GridCards from "../../Components/GridCards";
 import Head from "next/head";
+import { api } from "../../services/api";
 
-export default function Profile() {
-  
-    
+export default function Profile({ posts }) {
+
+
   const [isCardVisible, setIsCardVisible] = useState(true);
-  
+
 
   const [posts, setPosts] = useState();
   const [text, setName] = useState([]);
@@ -27,7 +28,7 @@ export default function Profile() {
     reader.readAsDataURL(file);
   }
 
-  
+
   const addPost = (e) => {
     setIsCardVisible(false);
     e.preventDefault();
@@ -40,14 +41,14 @@ export default function Profile() {
       imagemUrl: imagemUrl,
     };
     setName((prevState) => [...prevState, newPost]);
-    
-      
-   
+
+
+
   };
 
   return (
     <>
-     <Head>
+      <Head>
         <title>Perfil | LocateMe</title>
         <meta
           name="description"
@@ -56,9 +57,9 @@ export default function Profile() {
         <link rel="icon" href="/logoLupa.png" />
       </Head>
       {/* NavBar - Componente - 1 */}
-    
+
       <div className=" full-h-screen bg-slate-300 ">
-        
+
 
         <div className="flex flex-row justify-evenly">
           <div className="flex -ml-30 mt-12">
@@ -97,7 +98,7 @@ export default function Profile() {
         <form className="grid justify-items-center mt-10 ">
           <div className="w-3/6   mb-1 border border-blue-100 rounded-md bg-blue-100">
             <div className="px-1 py-1 bg-white rounded-md dark:bg-blue-100 ">
-             
+
               <textarea
                 id="comment"
                 rows="4"
@@ -138,32 +139,36 @@ export default function Profile() {
               </button>
             </div>
           </div>
-          {isCardVisible && (<GridCards/>)}
-          
+          {isCardVisible && (<GridCards />)}
+
         </form>
-        
+
       </div>
 
       <div className="full-h-screen bg-slate-300 ">
         <div className=" grid justify-items-center">
-          {text.map((item, index) => (
-            <Card
-              key={index}
-              text={item.text}
-              time={item.time}
-              imagemUrl={item.imagemUrl}
-            />
-          ))}
+          {posts.map((post) => {
+            return (
+              <Card
+                key={post.id}
+                text={post.description}
+                time={post.createdAt}
+                imagemUrl={post.imagem}
+                name={post.user.name}
+                phone={post.user.phone}
+              />
+            )
+          })}
         </div>
       </div>
-        
+
       {/* /NavBar */}
     </>
   );
 }
 
 export const getServerSideProps = async (ctx) => {
-  const { 'findy-token': token } = parseCookies(ctx);
+  const { 'findy-token': token, 'findy-user-id': userId } = parseCookies(ctx);
 
   if (!token) {
     return {
@@ -174,7 +179,10 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
+  const response = await api.get(`/posts/me/${userId}`)
+  const posts = response.data
+
   return {
-    props: {},
+    props: { posts },
   };
 };
