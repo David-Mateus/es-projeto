@@ -13,7 +13,7 @@ export default function Feed({ posts }) {
                     <div className="flex justify-between">
                         <div className="flex ml-8 mt-2 sm:ml-20">
                             <Image className="" src="/icons.png" width={50} height={50} alt="Logo" />
-                            <h1 className="text-5xl text-gray-700 font-bold">LocateMe</h1>
+                            <h1 className="text-5xl text-slate-300 font-bold">LocateMe</h1>
                         </div>
 
                         <Link href="/profile">
