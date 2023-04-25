@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import Card from "../../Components/Card";
+import Card from "../../components/Card";
 import { parseCookies } from "nookies";
-import GridCards from "../../Components/GridCards";
+import GridCards from "../../components/GridCards";
 import Head from "next/head";
 
 export default function Profile() {

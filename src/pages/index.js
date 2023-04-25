@@ -1,6 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import Head from "next/head";
+import ButtonProfile from "../components/ButtonProfile";
+import NavbarHome from "../components/NavbarHome";
+
 export default function Home() {
   return (
    <>
@@ -10,23 +12,12 @@ export default function Home() {
           name="description"
           content="você"
         />
+       
         <link rel="icon" href="/logoLupa.png" />
       </Head>
     <div className="h-screen bg-gray-300">
         {/* NavBar - Componente - 1 */}
-        <div className="  flex justify-between">
-          <div >
-            <div className="flex  ml-40 mt-8">
-              <Image src="/icons.png" width={50} height={50} alt="Logo" />
-              <h1 className="text-5xl text-gray-700 font-bold">
-                LocateMe
-              </h1>
-            </div>
-          </div>
-          <div>
-            <Image src="/circle.png" width={150} height={150} alt="Hero" />
-          </div>
-        </div>
+       <NavbarHome/>
         {/* /NavBar */}
 
         {/* Section */}
@@ -52,16 +43,7 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col md:flex-row">
-              <Link href="./authi/signInPage">
-                <button className="inline-block mb-4 md:mb-0 md:mr-4 px-6 py-3 text-xl font-bold text-gray-700 border rounded-lg bg-blue-400 border-teal-600 hover:bg-gray-300 ">
-                  Entrar
-                </button>
-              </Link>
-              <Link href="./authi/signupPage">
-                <button className="inline-block px-6 py-3 text-xl font-bold text-gray-700 border rounded-lg bg-blue-400 border-teal-600 hover:bg-gray-300 ">
-                  Criar perfil
-                </button>
-              </Link>
+              <ButtonProfile/>
             </div>
             </div>
           </div>

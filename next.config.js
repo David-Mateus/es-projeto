@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-    domains: ['assets.acme.com']
+    domains: ['assets.acme.com'],
+    disableStaticImages: true
   },
   
 }
