@@ -51,11 +51,11 @@ export default function Profile() {
         <title>Perfil | LocateMe</title>
         <meta
           name="description"
-          content="você"
+          content="Encontre seus objetos perdidos com o LocateMe, o melhor site de achados e perdidos. Cadastre seus objetos e ajude a comunidade a recuperar seus pertences."
         />
         <link rel="icon" href="/logoLupa.png" />
       </Head>
-      {/* NavBar - Componente - 1 */}
+      
     
       <div className=" full-h-screen bg-slate-300 ">
         
@@ -92,7 +92,7 @@ export default function Profile() {
             </Link>
           </div>
         </div>
-        {/* </div> */}
+       
 
         <form className="grid justify-items-center mt-10 ">
           <div className="w-3/6   mb-1 border border-blue-100 rounded-md bg-blue-100">
@@ -157,7 +157,7 @@ export default function Profile() {
         </div>
       </div>
         
-      {/* /NavBar */}
+     
     </>
   );
 }

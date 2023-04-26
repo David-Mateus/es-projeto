@@ -6,7 +6,7 @@ describe("NavbarHome", () => {
   it("should render logo and title correctly", () => {
     const { getByAltText, getByText } = render(<NavbarHome />);
 
-    const userImage = screen.getByAltText("Logo");
+    const userImage = screen.getByAltText("Logo2");
     expect(userImage).toBeInTheDocument();
     const title = getByText("LocateMe");
     expect(title).toBeInTheDocument();

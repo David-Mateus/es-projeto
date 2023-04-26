@@ -5,7 +5,7 @@ export default function NavbarHome(){
          <div className="  flex justify-between">
           <div >
             <div className="flex  ml-40 mt-8">
-              <Image src="/icons.png" width={50} height={50} alt="Logo" />
+              <Image src="/icons.png" width={50} height={50} alt="Logo2" />
               <h1 className="text-5xl text-gray-700 font-bold">
                 LocateMe
               </h1>

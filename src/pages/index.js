@@ -7,10 +7,10 @@ export default function Home() {
   return (
    <>
     <Head>
-        <title>Home | LocateMe</title>
+        <title>LocateMe | - Encontre seus objetos perdidos</title>
         <meta
           name="description"
-          content="você"
+          content="Encontre seus objetos perdidos com o LocateMe, o melhor site de achados e perdidos. Cadastre seus objetos e ajude a comunidade a recuperar seus pertences."
         />
        
         <link rel="icon" href="/logoLupa.png" />
@@ -21,11 +21,12 @@ export default function Home() {
         {/* /NavBar */}
 
         {/* Section */}
-        <div className="container  md-auto  ">
+        <div className="container  md:auto ">
           <div className="flex space-x-36">
             {/* Image */}
-            <div className="flex-shrink -mt-16 ml-20 ease-linear transform hover:scale-125 transition duration-700">
+            <div className="flex-shrink  -mt-16 ml-20 ease-linear transform hover:scale-125 transition duration-700">
               <Image
+               
                 src="/Ilustracao.png"
                 width={500}
                 height={500}
@@ -35,7 +36,7 @@ export default function Home() {
 
             {/* Text and checkout login */}
             <div className=" space-y-6">
-              <h1 className="text-gray-700  font-bold text-4xl ">
+              <h1 className="text-gray-700  font-bold text-4xl  ">
               Não perca mais tempo<br/>  procurando, o LocateMe<br/>  está aqui para ajudar!
               </h1>
               <p className="text-gray-500  text-base">
