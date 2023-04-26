@@ -7,6 +7,7 @@ import { parseCookies } from "nookies";
 import GridCards from "../../Components/GridCards";
 import Head from "next/head";
 import { api } from "../../services/api";
+import { imageApi } from "../../services/images";
 import { Router, useRouter } from "next/router";
 
 export default function Profile({ postList, userId }) {
@@ -14,20 +15,22 @@ export default function Profile({ postList, userId }) {
   const [posts, setPosts] = useState();
   const [imagemUrl, setImagemUrl] = useState("");
 
-  function handleUpload(event) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
+  // function handleUpload(event) {
+  //   const file = event.target.files[0];
+  //   const reader = new FileReader();
 
-    reader.onload = function (e) {
-      setImagemUrl(e.target.result);
-    };
-    reader.readAsDataURL(file);
-  }
+  //   reader.onload = function (e) {
+  //     setImagemUrl(e.target.result);
+  //   };
+  //   reader.readAsDataURL(file);
+  // }
   const router = useRouter()
 
   const addPost = async (e) => {
     await api.post('/posts/create', { description: posts, user: userId })
-      .then((response) => {
+      .then(async (response) => {
+        const postId = response.data._id
+        await imageApi.post('/post/img/add', { post: postId, file: imagemUrl })
         router.reload()
       })
 
@@ -100,7 +103,9 @@ export default function Profile({ postList, userId }) {
             <div className="flex items-center justify-between px-3 py-2 border-t">
               <div className="flex pl-0 space-x-1 sm:pl-0 text-xs">
                 <input
-                  onChange={handleUpload}
+                  onChange={(e) => {
+                    setImagemUrl(e.target.value);
+                  }}
                   type="file"
                   className="inline-flex justify-end   text-gray-500 rounded cursor-pointer hover:text-gray-900 "
                 ></input>
@@ -168,6 +173,13 @@ export const getServerSideProps = async (ctx) => {
 
   const response = await api.get(`/posts/me/${userId}`)
   const postList = response.data.slice(0).reverse()
+
+  // response.data.map(async (post) => {
+  //   await imageApi.get(`/post/img/${post.id}`)
+  //     .then((response => {
+  //       const 
+  //     }))
+  // })
 
   return {
     props: { postList, userId },
