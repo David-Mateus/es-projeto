@@ -1,12 +1,10 @@
 import axios from "axios";
 import { parseCookies } from "nookies";
-import * as dotenv from 'dotenv'
-dotenv.config()
 const apiBaseUrl = process.env.IMAGE_URL
 const { 'findy-token': token } = parseCookies()
 
 const imageApi = axios.create({
-  baseURL: apiBaseUrl
+  baseURL: 'https://image-service-psi.vercel.app/'
 })
 
 if (token) {
