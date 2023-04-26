@@ -75,7 +75,7 @@ export default function SignUp() {
                   className="w-full mt-1 bg-gray-50 border border-gray-300 rounded px-2 py-1 text-sm text-gray-800 
                 placeholder-gray-300 focus:outline-none focus:shadow-outline-blue focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-500 ease-in-out "
                 />
-                <p className="italic  text-xs text-red-400">
+                <p className="italic  text-xs text-red-400" id="data-test-name">
                   {errors.name?.message}
                 </p>
               </div>
@@ -94,7 +94,7 @@ export default function SignUp() {
                   className="w-full mt-1 bg-gray-50 border border-gray-300 rounded px-2 py-1 text-sm text-gray-800 
                 placeholder-gray-300 focus:outline-none focus:shadow-outline-blue focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-500 ease-in-out "
                 />
-                <p className="italic  text-xs text-red-400">
+                <p className="italic  text-xs text-red-400" id="data-test-phone">
                   {errors.phone?.message}
                 </p>
               </div>
@@ -114,7 +114,7 @@ export default function SignUp() {
                   className="w-full mt-1 bg-gray-50 border border-gray-300 rounded px-2 py-1 text-sm text-gray-800 
                 placeholder-gray-300 focus:outline-none focus:shadow-outline-blue focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-500 ease-in-out "
                 />
-                <p className="italilastNamec  text-xs text-red-400">
+                <p className="italilastNamec  text-xs text-red-400" id="data-test-email">
                   {errors.email?.message}
                 </p>
               </div>
@@ -132,7 +132,7 @@ export default function SignUp() {
                   {...register("password")}
                   className="w-full mt-2 bg-gray-50 border border-gray-300 rounded px-2 py-1  text-sm text-gray-800placeholder-gray-300 focus:outline-none focus:shadow-outline-blue focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-500 ease-in-out "
                 />
-                <p className="italic  text-xs text-red-400">
+                <p className="italic  text-xs text-red-400" id="data-test-password">
                   {errors.password?.message}
                 </p>
               </div>
