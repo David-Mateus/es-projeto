@@ -7,15 +7,11 @@ import { parseCookies } from "nookies";
 import GridCards from "../../Components/GridCards";
 import Head from "next/head";
 import { api } from "../../services/api";
+import { Router, useRouter } from "next/router";
 
-export default function Profile({ posts }) {
-
-
-  const [isCardVisible, setIsCardVisible] = useState(true);
-
+export default function Profile({ postList, userId }) {
 
   const [posts, setPosts] = useState();
-  const [text, setName] = useState([]);
   const [imagemUrl, setImagemUrl] = useState("");
 
   function handleUpload(event) {
@@ -27,22 +23,13 @@ export default function Profile({ posts }) {
     };
     reader.readAsDataURL(file);
   }
+  const router = useRouter()
 
-
-  const addPost = (e) => {
-    setIsCardVisible(false);
-    e.preventDefault();
-    const newPost = {
-      text: posts,
-      time: new Date().toLocaleTimeString("pt-BR", {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-      imagemUrl: imagemUrl,
-    };
-    setName((prevState) => [...prevState, newPost]);
-
-
+  const addPost = async (e) => {
+    await api.post('/posts/create', { description: posts, user: userId })
+      .then((response) => {
+        router.reload()
+      })
 
   };
 
@@ -139,7 +126,7 @@ export default function Profile({ posts }) {
               </button>
             </div>
           </div>
-          {isCardVisible && (<GridCards />)}
+          {postList.length == 0 && (<GridCards />)}
 
         </form>
 
@@ -147,7 +134,7 @@ export default function Profile({ posts }) {
 
       <div className="full-h-screen bg-slate-300 ">
         <div className=" grid justify-items-center">
-          {posts.map((post) => {
+          {postList.map((post) => {
             return (
               <Card
                 key={post.id}
@@ -180,9 +167,9 @@ export const getServerSideProps = async (ctx) => {
   }
 
   const response = await api.get(`/posts/me/${userId}`)
-  const posts = response.data
+  const postList = response.data.slice(0).reverse()
 
   return {
-    props: { posts },
+    props: { postList, userId },
   };
 };
