@@ -114,7 +114,7 @@ export default function SignIn() {
                 </p>
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm  text-gray-700 mb-1">
+                <label id="email" htmlFor="email" className="block text-sm  text-gray-700 mb-1">
                   Email address
                 </label>
                 <input
@@ -144,12 +144,13 @@ export default function SignIn() {
                 <p className="italic  text-xs text-red-400">{errors.password?.message}</p>
               </div>
               <div className="text-right mb-4">
-                <Link href="" className="text-sm text-blue-400 hover:underline">
+                <Link href="/authi/forgotPassword" className="text-sm text-blue-400 hover:underline">
                   Forgot password?
                 </Link>
               </div>
               <div>
                 <button
+                  
                   type="submit"
                   className="w-full bg-blue-400 border border-gray-300 hover:bg-blue-500 hover:text-white hover:border-gray-100 px-4 py-1 rounded text-white shadow"
                 >
