@@ -6,48 +6,39 @@ import Card from "../../components/Card";
 import { parseCookies } from "nookies";
 import GridCards from "../../components/GridCards";
 import Head from "next/head";
+import { api } from "../../services/api";
+import { imageApi } from "../../services/images";
+import { Router, useRouter } from "next/router";
 
-export default function Profile() {
-  
-    
-  const [isCardVisible, setIsCardVisible] = useState(true);
-  
+export default function Profile({ postList, userId }) {
 
   const [posts, setPosts] = useState();
-  const [text, setName] = useState([]);
   const [imagemUrl, setImagemUrl] = useState("");
 
-  function handleUpload(event) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
+  // function handleUpload(event) {
+  //   const file = event.target.files[0];
+  //   const reader = new FileReader();
 
-    reader.onload = function (e) {
-      setImagemUrl(e.target.result);
-    };
-    reader.readAsDataURL(file);
-  }
+  //   reader.onload = function (e) {
+  //     setImagemUrl(e.target.result);
+  //   };
+  //   reader.readAsDataURL(file);
+  // }
+  const router = useRouter()
 
-  
-  const addPost = (e) => {
-    setIsCardVisible(false);
-    e.preventDefault();
-    const newPost = {
-      text: posts,
-      time: new Date().toLocaleTimeString("pt-BR", {
-        hour: "2-digit",
-        minute: "2-digit",
-      }),
-      imagemUrl: imagemUrl,
-    };
-    setName((prevState) => [...prevState, newPost]);
-    
-      
-   
+  const addPost = async (e) => {
+    await api.post('/posts/create', { description: posts, user: userId })
+      .then(async (response) => {
+        const postId = response.data._id
+        await imageApi.post('/post/img/add', { post: postId, file: imagemUrl })
+        router.reload()
+      })
+
   };
 
   return (
     <>
-     <Head>
+      <Head>
         <title>Perfil | LocateMe</title>
         <meta
           name="description"
@@ -55,10 +46,9 @@ export default function Profile() {
         />
         <link rel="icon" href="/logoLupa.png" />
       </Head>
-      
-    
+
       <div className=" full-h-screen bg-slate-300 ">
-        
+
 
         <div className="flex flex-row justify-evenly">
           <div className="flex -ml-30 mt-12">
@@ -97,7 +87,7 @@ export default function Profile() {
         <form className="grid justify-items-center mt-10 ">
           <div className="w-3/6   mb-1 border border-blue-100 rounded-md bg-blue-100">
             <div className="px-1 py-1 bg-white rounded-md dark:bg-blue-100 ">
-             
+
               <textarea
                 id="comment"
                 rows="4"
@@ -112,7 +102,9 @@ export default function Profile() {
             <div className="flex items-center justify-between px-3 py-2 border-t">
               <div className="flex pl-0 space-x-1 sm:pl-0 text-xs">
                 <input
-                  onChange={handleUpload}
+                  onChange={(e) => {
+                    setImagemUrl(e.target.value);
+                  }}
                   type="file"
                   className="inline-flex justify-end   text-gray-500 rounded cursor-pointer hover:text-gray-900 "
                 ></input>
@@ -138,32 +130,35 @@ export default function Profile() {
               </button>
             </div>
           </div>
-          {isCardVisible && (<GridCards/>)}
-          
+          {postList.length == 0 && (<GridCards />)}
+
         </form>
-        
+
       </div>
 
       <div className="full-h-screen bg-slate-300 ">
         <div className=" grid justify-items-center">
-          {text.map((item, index) => (
-            <Card
-              key={index}
-              text={item.text}
-              time={item.time}
-              imagemUrl={item.imagemUrl}
-            />
-          ))}
+          {postList.map((post) => {
+            return (
+              <Card
+                key={post.id}
+                text={post.description}
+                time={post.createdAt}
+                imagemUrl={post.imagem}
+                name={post.user.name}
+                phone={post.user.phone}
+              />
+            )
+          })}
         </div>
       </div>
-        
-     
+
     </>
   );
 }
 
 export const getServerSideProps = async (ctx) => {
-  const { 'findy-token': token } = parseCookies(ctx);
+  const { 'findy-token': token, 'findy-user-id': userId } = parseCookies(ctx);
 
   if (!token) {
     return {
@@ -174,7 +169,17 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
+  const response = await api.get(`/posts/me/${userId}`)
+  const postList = response.data.slice(0).reverse()
+
+  // response.data.map(async (post) => {
+  //   await imageApi.get(`/post/img/${post.id}`)
+  //     .then((response => {
+  //       const 
+  //     }))
+  // })
+
   return {
-    props: {},
+    props: { postList, userId },
   };
 };

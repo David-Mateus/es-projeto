@@ -22,6 +22,10 @@ export function AuthProvider({ children }) {
       maxAge: 60 * 60,
       path: '/'
     })
+    setCookie(undefined, 'findy-user-id', response.data.user._id, {
+      maxAge: 60 * 60,
+      path: '/'
+    })
     api.defaults.headers['Authorization'] = `Bearer ${response.data.token}`
     setUser(response.data.user)
     Router.push('/feed')
